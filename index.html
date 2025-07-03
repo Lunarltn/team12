@@ -1,0 +1,734 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>여름,겨울</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        /* #region Main hs 스타일 시작*/
+        .parent {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .child {
+            position: relative;
+            margin: auto 30px;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .child_caption_back {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 80px;
+            height: 80px;
+            background-color: yellowgreen;
+            border-radius: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 1;
+        }
+
+        .child_box {
+            width: 100%;
+            padding-top: 90px;
+            text-align: center;
+        }
+
+        /* #endregion Main hs 스타일 끝*/
+
+        /* #region Main us 스타일 시작*/
+        .intro_3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: 0px 0px 3px 0px;
+            border-radius: 10px;
+        }
+
+        .container_1 {
+            height: 200px;
+            font-size: 60px;
+            text-align: left;
+            margin-right: 500px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Gowun+Dodum&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+        .title {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding-left: 40px;
+            font-size: 40px;
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .title>button {
+            margin-left: 20px;
+            width: 10%
+        }
+
+        .e_name {
+            font-family: "Lora", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        .memeber_picture {
+            background-color: rgba(255, 255, 255, 0.5);
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 310px;
+            background-size: cover;
+            background: linear-gradient(to top,
+                    rgba(255, 255, 255, 0) 10%,
+                    rgba(255, 255, 255, 0.2) 25%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0.4) 75%,
+                    rgba(255, 255, 255, 0.5) 100%)
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Gowun+Dodum&display=swap');
+
+        .mem>button {
+            margin-left: 60px;
+            font-size: 25px;
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .mem {
+            margin: 0px 0px 0px 70px;
+        }
+
+        .mymembox {
+            background-color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 500px;
+            margin: 0px auto 0px auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .box {
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mybtn>button {
+            margin-right: 10px;
+        }
+
+        .mypostingbox {
+            text-align: center;
+        }
+
+        /* #endregion us 스타일 끝*/
+
+        /* #region Main sh 스타일 시작*/
+
+
+        .apply_condition {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .apply_condition h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .apply_condition ul {
+            list-style: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .apply_condition button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .apply_form {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .apply_form input,
+        .apply_form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .apply_form button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .guestbook-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .apply_card {
+            width: 18rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .apply_card-img-top {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .apply_card-body {
+            padding: 16px;
+        }
+
+        .apply_card-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .apply_card-text {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .top-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #apply_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* #endregion Main sh 스타일 끝*/
+
+        /* 디자인 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            z-index: -1;
+            transition: opacity 0.2s linear;
+            pointer-events: none;
+        }
+
+        .bg1 {
+            background-image: url('summer.jpg');
+            opacity: 1;
+        }
+
+        .bg2 {
+            background-image: url('winter.jpg');
+
+            opacity: 0;
+        }
+    </style>
+
+    <script type="module">
+        //Firebase import
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAcqpzgibCjLlTXWFMkJyCPUM79kaNNw-U",
+            authDomain: "sparta-cc24a.firebaseapp.com",
+            projectId: "sparta-cc24a",
+            storageBucket: "sparta-cc24a.firebasestorage.app",
+            messagingSenderId: "39629645103",
+            appId: "1:39629645103:web:df27dfa25fe2b1f187adda",
+            measurementId: "G-BCEHD87CVV"
+        };
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        //#region us 스크립트 시작
+
+        $("#record").click(async function () {
+            let name = $('#name').val();
+            if (!name) {
+                alert("이름을 입력해주세요.");
+                return;
+            }
+
+            let image = $('#image').val();
+            let mbti = $('#mbti').val();
+            let pn = $('#pn').val();
+            let blog = $('#blog').val();
+            let hobby = $('#hobby').val();
+            let language = $('#language').val();
+
+            let doc = {
+                'image': image,
+                'name': name,
+                'name': name,
+                'image': image,
+                'mbti': mbti,
+                'blog': blog,
+                'hobby': hobby,
+                'pn': pn,
+                'language': language
+            };
+            await addDoc(collection(db, "members"), doc);
+            window.location.reload();
+        })
+
+        $("#end").click(async function () {
+            $('#membox').slideToggle();
+        })
+
+        $(document).ready(function () {
+            $('#membox').hide();
+
+            $("#postingbtn").click(async function () {
+                $('#membox').slideToggle();
+            });
+        });
+
+        $(document).ready(function () {
+            $("[id^=intro]").hide();
+        });
+
+        $(document).on("click", "[id^=m]", function () {
+            const btnId = $(this).attr("id");
+            const idx = btnId.substring(1);
+            const $target = $(`#intro${idx}`);
+
+            if ($target.is(":visible")) {
+                $target.hide(); // 이미 보이면 감추기
+            } else {
+                $("[id^=intro]").hide(); // 다른 카드들 숨기기
+                $target.show();          // 내가 누른 카드 보이기
+            }
+        });
+
+        let itrdocs = await getDocs(collection(db, "members"));
+        let indexOffset = 4;
+        itrdocs.forEach((doc) => {
+            let row = doc.data();
+            indexOffset += 1;
+
+            let image = row['image'];
+            let name = row['name'];
+            let mbti = row['mbti'];
+            let blog = row['blog'];
+            let hobby = row['hobby'];
+            let pn = row['pn'];
+            let language = row['language']
+            if (!image) image = "https://img.freepik.com/premium-vector/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-vector-illustration_561158-3396.jpg?semt=ais_hybrid&w=740";
+
+            let temp_html = `            
+        <div class="mem">
+            <img src="${image}" width="210" height="230">
+            <p class="e_name">NAME</p>
+            <button id="m${indexOffset}" type="button" class="btn">${name}</button>
+        </div>`;
+            $('#lastmem').append(temp_html);
+
+            let temp_html1 = `            
+        <div id="intro${indexOffset}" class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title">${name}</h5>
+                <p>엠비티아이 :${mbti}</p>
+                <p>블로그주소 :${blog}</p>
+                <p>취미 : ${hobby}</p>
+                <p>장단점 : ${pn}</p>
+                <p>사용할 수 있는 언어 : ${language}</p>
+                <a href="#" class="card-link">${blog}</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>`;
+            $('#postingbox').append(temp_html1);
+            $(document).ready(function () {
+                $("[id^=intro]").hide();
+            });
+        });
+        //#endregion us 스크립트 끝
+
+        //#region sh 스크립트 시작
+        $("#savebtn").click(async function () {
+            $('#guestbookForm').slideToggle();
+        });
+
+
+        $("#topbtn").click(function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        function addGuestbook() {
+            const name = document.getElementById("nameInput").value.trim();
+            const intro = document.getElementById("introInput").value.trim();
+            const imgUrl = document.getElementById("imgUrlInput").value.trim();
+
+            if (!name || !intro) {
+                alert("이름과 자기소개는 반드시 입력해주세요!");
+                return;
+            }
+        }
+        $("#applypostingbtn").click(async function () {
+            let image = $('#imgUrlInput').val();
+            let formInput = $('#formInput').val();
+            let name = $('#nameInput').val();
+
+            let doc = {
+                'name': name,
+                'formInput': formInput,
+                'image': image,
+            };
+            console.log(doc);
+
+            await addDoc(collection(db, "resume"), doc);
+            alert('저장완료!')
+            window.location.reload();
+        })
+
+        let docs = await getDocs(collection(db, "resume"));
+        docs.forEach((doc) => {
+            let row = doc.data();
+
+            let name = row['name']
+            let formInput = row['formInput']
+            let image = row['image']
+            if (!image) image = "https://img.freepik.com/premium-vector/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-vector-illustration_561158-3396.jpg?semt=ais_hybrid&w=740";
+            let temp_html = `      
+            <div class="apply_card mb-3 text-black" style="width: 600px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="${image}" class="img-fluid rounded-start" alt="Image">
+                    </div>
+                        <div class="col-md-8">
+                            <div class="apply_card-body">
+                                <h5 class="apply_card-title">
+                                    ${name}
+                                </h5>
+                                <p class="apply_card-text">
+                                    ${formInput}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+            $('#apply_card').append(temp_html);
+        });
+        //#endregion sh 스크립트 끝
+        //디자인
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / scrollHeight;
+
+            document.querySelector(".bg2").style.opacity = scrollPercent;
+        });
+    </script>
+</head>
+
+<body>
+    <div class="background bg1"></div>
+    <div class="background bg2"></div>
+    <div class="background bg3"></div>
+
+
+    <div class="p-5 text-center bg-body-tertiary" style="background-color: rgba(255, 255, 255, 0.5);">
+        <div class="container_1">
+            <h1>여름 겨울</h1>
+            <p>계절과 같이 성장하는 팀</p>
+        </div>
+    </div>
+
+
+    <div class=" parent" style="background-color: rgba(255, 255, 255, 0.5);">
+        <div class=" child ">
+            <div class=" child_caption_back" style="background-color:#9AE67F ">
+                <div style="color:black">소개</div>
+            </div>
+            <div class="child_box">
+                <p>안녕하세요!</p>
+                <p>서로 부족한 점을 보완해나가며 성장하는 팀!</p>
+                <p>유쾌발랄한 12조입니다</p>
+            </div>
+        </div>
+
+
+        <div class=" child ">
+            <div class=" child_caption_back" style="background-color: #C5EDB7">
+                <div style="color:black">목표</div>
+            </div>
+            <div class=" child_box">
+                <p>막막하더라도 서로함꺠 해결해나가기</p>
+                <p>적극적으로 프로젝트에 참가하기.</p>
+                <p>자신이 맡은 역할에 충실하겠습니다.</p>
+            </div>
+        </div>
+        <div class=" child ">
+            <div class=" child_caption_back " style="background-color: rgb(226, 255, 167)">
+                <div style="color:black">약속</div>
+            </div>
+            <div class=" child_box">
+                <p>혼자하지 않기</p>
+                <p> 어려울 때 팀장 간절하게 바라보기</p>
+                <p class="cptpont"> 팀장은 절대적. 방해하지 않기. (구글 폰트 ‘궁서체’)</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="title">
+        <p>Team Member</p>
+        <button id="postingbtn" type="button" class="btn btn-outline-dark">동료되기</button>
+    </div>
+    <div class="mymembox" id="membox">
+        <div class="box">
+            <div class="box1">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="image" placeholder="앨범 이미지">
+                    <label for="floatingInput">이미지</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="name" placeholder="앨범 날짜">
+                    <label for="floatingInput">이름</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="mbti" placeholder="앨범 이미지">
+                    <label for="floatingInput">엠비티아이</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="blog" placeholder="앨범 날짜">
+                    <label for="floatingInput">블로그주소</label>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="hobby" placeholder="앨범 이미지">
+                    <label for="floatingInput">취미</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="pn" placeholder="앨범 날짜">
+                    <label for="floatingInput">장단점</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="language" placeholder="앨범 날짜">
+                    <label for="floatingInput">사용할 수 있는 언어</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="string" placeholder="앨범 날짜">
+                    <label for="floatingInput">각오 한마디!</label>
+                </div>
+            </div>
+        </div>
+        <div class="mybtn">
+            <button id="record" type="button" class="btn btn-dark">기록하기</button>
+            <button id="end" type="button" class="btn btn-outline-dark">닫기</button>
+        </div>
+    </div>
+    <div id="lastmem" class="memeber_picture">
+        <div class="mem">
+            <img src="ks.png" width=" 210" height="230">
+            <p class="e_name">NAME</p>
+            <button id="m1" type="button" class="btn">김기수</button>
+        </div>
+        <div class="mem">
+            <img src="sh.jpeg" width="210" height="230">
+            <p class="e_name">NAME</p>
+            <button id="m2" type="button" class="btn">강성현</button>
+        </div>
+        <div class="mem">
+            <img src="us.jpg" width="210" height="230">
+            <p class="e_name">NAME</p>
+            <button id="m3" type="button" class="btn ">정은서</button>
+        </div>
+        <div class="mem">
+            <img src="hs.png" width="210" height="230">
+            <p class="e_name">NAME</p>
+            <button id="m4" type="button" class="btn">정회석</button>
+        </div>
+    </div>
+    <div id="postingbox" class="mypostingbox">
+        <div id="intro1" class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title">김기수</h5>
+                <p>엠비티아이 :</p>
+                <p>블로그주소 :https://velog.io/@qpsrltn/</p>
+                <p>취미 : 게임 만화</p>
+                <p>장단점 : 꼼꼼한 성격</p>
+                <p>사용할 수 있는 언어 : C#, 한국어, 일본어</p>
+                <a href="#" class="card-link">https://velog.io/@qpsrltn/posts/</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        <div id="intro2" class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title">강성현</h5>
+                <p>엠비티아이 :ISTJ</p>
+                <p>블로그주소 :https://ksols.tistory.com//</p>
+                <p>취미 : 게임/품질관련 유튜브 영상 찾아보기</p>
+                <p>장단점 : 남의 이야기를 잘 들어줌/내 이야기를 잘 못함</p>
+                <p>사용할 수 있는 언어 : 한국어</p>
+                <a href="#" class="card-link">https://ksols.tistory.com//</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        <div id="intro3" class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title">정은서</h5>
+                <p>엠비티아이 :INTP</p>
+                <p>블로그주소 :https://solem-13.tistory.com/</p>
+                <p>취미 : 게임 그림 만화</p>
+                <p>장단점 : 성격이 매우 느긋함</p>
+                <p>사용할 수 있는 언어 : python, html, css, javascript, 한국어, 일본어</p>
+                <a href="#" class="card-link">https://solem-13.tistory.com/</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        <div id="intro4" class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title">정회석</h5>
+                <p>엠비티아이 :INTJ</p>
+                <p>블로그주소 : https://kasam1.tistory.com/</p>
+                <p>취미 : 게임 독서</p>
+                <p>장단점 : 이해심이 많음 그래도 이해 못하면 답답해함</p>
+                <p>사용할 수 있는 언어 : html, css, javascript, 한국어</p>
+                <a href="#" class="card-link">https://kasam1.tistory.com/</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="apply_bottom-section">
+        <div class="apply_condition">
+            <h3>신청 조건</h3>
+            <ul>
+                <li>조건 1: 신체가 건강하여 유사시에 대비 할 수 있는 사람</li>
+                <li>조건 2: 정신 건강이 온전한 사람</li>
+                <li>조건 3: 식비 미지원</li>
+                <li>조건 4: 사대보험 미적용</li>
+                <li>조건 5: 몸 깨끗하신분 (EX:문신, 흉터 등)</li>
+                <li>조건 6: 정신 건강이 온전한 사람</li>
+                <li>조건 7: 타인을 위하여 저주를 대신 받을 정도로 헌신적인 사람</li>
+            </ul>
+            <button id="savebtn" class="reveal-button">신청하기</button>
+        </div>
+
+        <div class="apply_form" id="guestbookForm" style="display: none;">
+            <h3>가입 신청서</h3>
+            <input type="text" id="nameInput" placeholder="이름" />
+            <textarea id="formInput" placeholder="자기소개글"></textarea>
+            <input type="text" id="imgUrlInput" placeholder="이미지 URL (선택사항)" />
+            <button id="applypostingbtn">신청</button>
+        </div>
+
+        <div class="my_apply_cards">
+            <div id="apply_card" class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+
+                </div>
+            </div>
+
+            <button class="top-button" id="topbtn">↑</button>
+        </div>
+    </div>
+
+</body>
